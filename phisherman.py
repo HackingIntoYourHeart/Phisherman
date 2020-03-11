@@ -10,7 +10,7 @@ PORT = 80
 class MainHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 	print("")
 	def do_POST(self):
-		str(tag).strip()
+		try:
 			form = cgi.FieldStorage(self.rfile, headers=self.headers, environ={'REQUEST_METHOD':'POST', 'CONTENT_TYPE':self.headers['Content-Type'],})
 			print("##################################")
 			for tag in form.list:
